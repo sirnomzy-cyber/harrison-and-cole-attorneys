@@ -216,9 +216,9 @@ ul { list-style: none; }
   gap: 36px;
 }
 .nav-links a {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--gray-light);
   transition: color var(--transition-fast);
@@ -340,8 +340,10 @@ ul { list-style: none; }
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 780px;
-  padding-top: 100px;
+  width: 100%;
+  max-width: 100%;
+  padding-top: 140px;
+  padding-bottom: 80px;
 }
 .hero-badge {
   display: inline-flex;
@@ -354,18 +356,19 @@ ul { list-style: none; }
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   animation: fadeDown 1s ease 0.3s both;
 }
 .hero-badge i { font-size: 0.65rem; }
 
 .hero-headline {
   font-family: var(--ff-serif);
-  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-size: clamp(3rem, 5.5vw, 5.4rem);
   font-weight: 500;
   line-height: 1.08;
   color: var(--white);
   margin-bottom: 28px;
+  max-width: 760px;
   animation: fadeDown 1s ease 0.5s both;
 }
 .hero-headline em {
@@ -373,25 +376,38 @@ ul { list-style: none; }
   color: var(--gold);
 }
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--gray-light);
-  max-width: 540px;
+  max-width: 500px;
   line-height: 1.85;
-  margin-bottom: 44px;
+  margin-bottom: 40px;
   font-weight: 300;
   animation: fadeDown 1s ease 0.7s both;
 }
+/* Buttons + trust badges on same row */
+.hero-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 48px;
+  animation: fadeDown 1s ease 0.9s both;
+  width: 100%;
+}
 .hero-btns {
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
-  animation: fadeDown 1s ease 0.9s both;
+  gap: 14px;
+  flex-shrink: 0;
+}
+.hero-btns .btn {
+  padding: 13px 24px;
+  font-size: 0.72rem;
 }
 .hero-trust {
   display: flex;
-  gap: 40px;
-  animation: fadeDown 1s ease 1.1s both;
+  gap: 28px;
+  flex-shrink: 0;
+  margin-left: auto;
+  align-items: center;
 }
 .trust-item {
   display: flex;
@@ -445,7 +461,7 @@ ul { list-style: none; }
    ABOUT SECTION
    ============================================================ */
 #about {
-  padding: 120px 0;
+  padding: 72px 0 120px;
   background: var(--navy-mid);
   position: relative;
 }
@@ -1449,12 +1465,12 @@ footer {
 .footer-col ul li a:hover::before { width: 20px; }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 24px 0;
+  padding: 32px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 10px;
+  text-align: center;
 }
 .footer-copy { font-size: 0.78rem; color: var(--gray); }
 .footer-legal { display: flex; gap: 24px; }
@@ -1664,41 +1680,42 @@ footer {
         Established 1994 · New York · Chicago · Los Angeles
       </div>
       <h1 class="hero-headline">
-        Experienced Legal<br>
-        Representation<br>
+        Experienced Legal Representation<br>
         <em>You Can Trust</em>
       </h1>
       <p class="hero-sub">
         Harrison &amp; Cole delivers elite legal counsel with an unwavering commitment to justice, precision, and client outcomes. Your rights. Our mission.
       </p>
-      <div class="hero-btns">
-        <a href="#consultation" class="btn btn-gold">
-          <i class="fas fa-calendar-check"></i> Book Free Consultation
-        </a>
-        <a href="#practice" class="btn btn-outline">
-          <i class="fas fa-briefcase"></i> Explore Practice Areas
-        </a>
-      </div>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fas fa-award"></i></div>
-          <div class="trust-text">
-            <strong>AV Rated</strong>
-            Martindale-Hubbell
-          </div>
+      <div class="hero-bottom-row">
+        <div class="hero-btns">
+          <a href="#consultation" class="btn btn-gold">
+            <i class="fas fa-calendar-check"></i> Book Free Consultation
+          </a>
+          <a href="#practice" class="btn btn-outline">
+            <i class="fas fa-briefcase"></i> Explore Practice Areas
+          </a>
         </div>
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fas fa-star"></i></div>
-          <div class="trust-text">
-            <strong>Super Lawyers</strong>
-            2019–2024
+        <div class="hero-trust">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-award"></i></div>
+            <div class="trust-text">
+              <strong>AV Rated</strong>
+              Martindale-Hubbell
+            </div>
           </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
-          <div class="trust-text">
-            <strong>100% Confidential</strong>
-            Attorney-Client Privilege
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-star"></i></div>
+            <div class="trust-text">
+              <strong>Super Lawyers</strong>
+              2019–2024
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="trust-text">
+              <strong>100% Confidential</strong>
+              Attorney-Client Privilege
+            </div>
           </div>
         </div>
       </div>
@@ -2467,9 +2484,9 @@ footer {
     </div>
     <!-- Bottom bar -->
     <div class="footer-bottom">
-      <p class="footer-copy">
-        © 2026 Harrison &amp; Cole Attorneys at Law. All Rights Reserved. | The information on this website is for general informational purposes only and does not constitute legal advice. | Designed by <span style="color:var(--gold);">SammieDigital</span>
-      </p>
+      <p class="footer-copy">© 2026 Harrison &amp; Cole Attorneys at Law. All Rights Reserved.</p>
+      <p class="footer-copy">The information on this website is for general informational purposes only and does not constitute legal advice.</p>
+      <p class="footer-copy">Designed by <a href="https://sammiedigital.vercel.app/" target="_blank" rel="noopener" style="color:var(--gold);transition:opacity 0.2s;" onmouseover="this.style.opacity='0.75'" onmouseout="this.style.opacity='1'">SammieDigital</a></p>
       <div class="footer-legal">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
